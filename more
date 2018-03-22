@@ -1,0 +1,1 @@
+g++ tests/test.cc -o test
