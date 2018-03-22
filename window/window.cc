@@ -57,7 +57,3 @@ std::string Window::to_string() {
           + "\n  padding : " + std::to_string(padding_.left) + ", " + std::to_string(padding_.top)
           + ", " + std::to_string(padding_.right) + ", " + std::to_string(padding_.bottom) + " \n]";
 }
-
-void Window::set_text(std::string text) {
-  mvprintw(start_.x + padding_.left, start_.y + padding_.top, text.c_str());
-}
