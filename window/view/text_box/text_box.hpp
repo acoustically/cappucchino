@@ -2,11 +2,11 @@
 #define __TEXT_BOX_H__
 
 
-#include "../window.hpp"
+#include "../view.hpp"
 #include <string>
 #include <ncurses.h>
 
-class TextBox : public Window {
+class TextBox : public View {
 public:
   TextBox(Position start, Position end);
   void set_text(std::string text);  
