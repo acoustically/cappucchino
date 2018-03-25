@@ -1,6 +1,6 @@
 #include <ncurses.h>                                
 #include "window/window.hpp"                         
-#include "window/text_box/text_box.hpp"
+#include "window/view/text_box/text_box.hpp"
 
 int focused_window = 0;    
                                                                          

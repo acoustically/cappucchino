@@ -1,4 +1,4 @@
-window = ./window/window.cc ./window/text_box/text_box.cc ./window/view/view.cc
+window = ./window/window.cc ./window/view/text_box/text_box.cc ./window/view/view.cc
 main = ./main.cc
 test_ = ./tests/test.cc ./tests/view/test_view.cc
 

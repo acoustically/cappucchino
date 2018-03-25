@@ -1,6 +1,6 @@
 #include "text_box.hpp"
 
-TextBox::TextBox(Position start, Position end) : Window(start, end) {
+TextBox::TextBox(Position start, Position end) : View(start, end) {
   text_ = "";
 }
 
