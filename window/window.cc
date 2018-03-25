@@ -1,5 +1,7 @@
 #include "window.hpp"
 
+int Window::count = 0;
+
 Position::Position(int x, int y) : x(x), y(y) {
 }
 
@@ -8,6 +10,7 @@ std::string Position::to_string() {
 }
 
 Window::Window(Position start, Position end) : start_(start), end_(end) {
+  id_ = Window::count++;
   set_padding(0, 0, 0, 0);
 }
 
@@ -44,7 +47,7 @@ struct Padding Window::get_padding() {
 }
 
 void Window::set_padding(int left, int top, int right, int bottom) {
-  Padding padding;
+  struct Padding padding;
   padding.left = left;
   padding.right = right;
   padding.top = top;
@@ -56,4 +59,17 @@ std::string Window::to_string() {
   return "[\n  start coordinates : " + start_.to_string() + "\n  end coordinates : " + end_.to_string() 
           + "\n  padding : " + std::to_string(padding_.left) + ", " + std::to_string(padding_.top)
           + ", " + std::to_string(padding_.right) + ", " + std::to_string(padding_.bottom) + " \n]";
+}
+
+int Window::get_id() {
+  return id_;
+} 
+
+
+Window get_screen() {
+  Window::count--;
+  int screen_max_y = 0;
+  int screen_max_x = 0;
+  getmaxyx(stdscr, screen_max_y, screen_max_x);
+  return Window(Position(0, 0), Position(screen_max_x, screen_max_y));
 }
